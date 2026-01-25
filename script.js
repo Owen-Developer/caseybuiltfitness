@@ -43,7 +43,7 @@ document.querySelector(".pro-letter-btn").addEventListener("click", () => {
     async function saveEmail(){
         const dataToSend = { email: document.getElementById("letterEmail").value };
         try {
-            const response = await fetch(url + `https://servers.nextdesignwebsite.com/casey/api/save-email`, {
+            const response = await fetch(`https://servers.nextdesignwebsite.com/casey/api/save-email`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json', 
