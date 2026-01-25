@@ -408,7 +408,7 @@ i.why-icon {
     text-align: center;
 }
 .pro-title {
-    margin: 22px 0 18px;
+    margin: 20px 0 22px;
     font-size: 68px;
     line-height: 1.05;
     color: white;
@@ -545,6 +545,140 @@ i.pro-chev:hover {
     border-radius: 10px;
     width: 100%;
     height: auto;
+
+}
+
+.pay-flex {
+    margin-top: 50px;
+    width: 100%;
+    height: 490px;
+    display: flex;
+    gap: 30px;
+    text-align: left;
+}
+.pay-wrapper {
+    padding: 24px 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: hsl(0, 0%, 7%);
+    border: 1px solid hsl(0, 0%, 12%);
+    border-radius: 15px;
+}
+.pay-left {
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.pay-head {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+}
+.pay-left-para {
+    margin: 12px 0 18px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.6;
+    color: hsl(0, 0%, 80%);
+}
+.pay-left-btn {
+    align-self: flex-start;
+    margin-bottom: auto;
+}
+.pay-faq-wrapper {
+    margin-top: 15px;
+    width: 100%;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: hsl(0, 0%, 10%);
+    border: 1px solid hsl(0, 0%, 17%);
+    border-radius: 8px;
+}
+.pay-faq-head {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    line-height: 1;
+}
+.pay-faq-txt {
+    margin-top: 18px;
+    font-size: 15px;
+    color: hsl(0, 0%, 80%);
+    line-height: 1;
+}
+
+.pay-right {
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.pay-right-price {
+    font-family: "Poppins", sans-serif;
+    margin: 18px 0 30px;
+    line-height: 1;
+    font-size: 68px;
+    font-weight: 500;
+    color: white;
+}
+.pay-right-hr {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(0, 0%, 22%), transparent);
+}
+.pay-right-flex {
+    margin: 34px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.pay-right-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.pay-right-li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
+    color: hsl(0, 0%, 80%);
+}
+.pay-right-li span {
+    background-color: hsl(0, 0%, 80%);
+    width: 6px;
+    height: 6px;
+    border-radius: 200px;
+}
+.pay-low-flex {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.pay-right-btn {
+    align-self: flex-start;
+    font-size: 17px;
+    padding: 14px 20px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    background: linear-gradient(to left, hsl(125, 100%, 12%), hsl(125, 100%, 42%));
+}
+.pay-low-label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: hsl(0, 0%, 60%);
+}
+.pay-low-email {
+    font-size: 16px;
+    color: white;
 }
 /*/////////////////////////////////////////////////////////////////*/
 
@@ -649,8 +783,8 @@ i.pro-chev:hover {
     margin-top: 8px;
     font-size: 14px;
     color: hsl(0, 0%, 80%);
-}
 
+}
 .tra-flex {
     margin-top: 30px;
     width: 100%;
@@ -902,6 +1036,21 @@ a.foot-txt:hover {
         margin-top: 60px;
     }
 
+    .pro-container {
+        width: 900px;
+    }
+    .pay-flex {
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .pay-left-btn {
+        margin-bottom: 20px;
+    }
+    .pay-low-flex {
+        margin-top: 35px;
+    }
+
     .foot-top {
         flex-direction: column;
         align-items: flex-start;
@@ -1119,6 +1268,49 @@ a.foot-txt:hover {
     .cta-title {
         font-size: 26px;
         line-height: 1.2;
+    }
+
+    .pro-letter {
+        max-width: 100%;
+    }
+    .pro-letter input {
+        font-size: 14px;
+    }
+    .pro-letter-btn {
+        padding: 0 18px;
+        font-size: 13px;
+    }
+
+    .pay-wrapper {
+        padding: 24px 15px;
+    }
+    .pay-right-mobile {
+        display: none;
+    }
+    .pay-right-li {
+        padding-left: 10px;
+    }
+    .pay-low-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .pay-head {
+        font-size: 24px;
+    }
+    .pay-right-price {
+        font-size: 58px;
+    }
+    .pay-left {
+        order: 2;
+    }
+    .pay-right {
+        order: 1;
+    }
+    .pay-faq-wrapper {
+        display: none;
+    }
+    .pay-left-btn {
+        margin-bottom: 0;
     }
 
     .foot-bg {
