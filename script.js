@@ -69,3 +69,42 @@ document.querySelector(".pro-letter-btn").addEventListener("click", () => {
         saveEmail();
     }
 });
+
+let params = new URLSearchParams(window.location.search);
+if(params.get("downloadId") && params.get("downloadId") == "904510"){
+    document.getElementById("pdfModal").style.opacity = "1";
+    document.getElementById("pdfModal").style.pointerEvents = "auto";
+}
+function viewPdf(){
+    let email = document.getElementById("emailInput").value;
+    if(email != ""){
+        async function sendEmail(){
+            const dataToSend = { email: email };
+            try {
+                const response = await fetch(`https://servers.nextdesignwebsite.com/casey/api/send-email`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(dataToSend), 
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Error:', errorData.message);
+                    return;
+                }
+
+                const data = await response.json();
+                if(data.message == "success"){
+                    window.location.href = "/pdfs/programme.pdf";
+                }
+            } catch (error) {
+                console.error('Error posting data:', error);
+            }
+        } 
+        sendEmail();
+    } else {
+        document.getElementById("emailInput").style.border = "1px solid red";
+    }
+}

@@ -24,8 +24,10 @@
 
     <div class="hero-container width ">
         <div class="hero-img">
-            <img src="images/grid-bg.svg" />
-            <svg class="hero-light hero-light-left" xmlns="http://www.w3.org/2000/svg" width="805" height="608" viewBox="0 0 805 608" fill="none">
+            <!-- 
+                -->
+            <img src="images/grid-bg.svg" class="desktop-grid" />
+            <svg class="hero-light hero-light-left desktop-grid" xmlns="http://www.w3.org/2000/svg" width="805" height="608" viewBox="0 0 805 608" fill="none">
             <g clip-path="url(#clip0_808_7837)">
             <g opacity="0.2" filter="url(#filter0_f_808_7837)">
             <path d="M-282.159 -390.853L-307 -366.012L128.807 69.7951L432.843 359.214L153.648 44.9541L-282.159 -390.853Z" fill="url(#paint0_linear_808_7837)"/>
@@ -70,7 +72,7 @@
             </clipPath>
             </defs>
             </svg>
-            <svg class="hero-light hero-light-right" xmlns="http://www.w3.org/2000/svg" width="805" height="608" viewBox="0 0 805 608" fill="none">
+            <svg class="hero-light hero-light-right desktop-grid" xmlns="http://www.w3.org/2000/svg" width="805" height="608" viewBox="0 0 805 608" fill="none">
             <g clip-path="url(#clip0_808_7846)">
             <g opacity="0.2" filter="url(#filter0_f_808_7846)">
             <path d="M1048.13 -359.853L1072.97 -335.012L637.16 100.795L333.123 390.214L612.319 75.9541L1048.13 -359.853Z" fill="url(#paint0_linear_808_7846)"/>
@@ -115,6 +117,8 @@
             </clipPath>
             </defs>
             </svg>
+
+            <img src="images/hero2.jpg" class="mobile-hero" />
         </div>
 
         <div class="hero-left">
@@ -477,6 +481,16 @@
                 </div>
             </div>
             <div class="foot-copy">Copyright © 2025 CaseyBuiltFitness. Website by <a href="https://nextdesignwebsite.com" target="_blank" style="text-decoration: underline; border-top: 0;" class="foot-copy">NextDesign</a></div>
+        </div>
+    </div>
+
+    <div class="book-modal" id="pdfModal">
+        <div class="book-wrapper">
+            <i class="fa-solid fa-check book-modal-check"></i>
+            <div class="book-modal-title">Thank You!</div>
+            <div class="book-modal-para">Your payment has been confirmed<br> Enter your email to save the programme.</div>
+            <input type="text" id="emailInput" placeholder="Enter email" />
+            <a onclick="viewPdf()" class="btn-book-modal">View Programme</a>
         </div>
     </div>
 

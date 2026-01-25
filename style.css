@@ -989,6 +989,92 @@ a.foot-txt:hover {
 }
 /*//////////////////////////////////////////////////////////////*/
 
+.mobile-hero {
+    display: none;
+}
+
+.book-modal {
+    z-index: 99;
+    opacity: 1;
+    pointer-events: auto;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+#pdfModal {
+    opacity: 0;
+    pointer-events: none;
+}
+.book-wrapper {
+    text-align: center;
+    background-color: hsl(0, 0%, 9%);
+    border: 1px solid hsl(0, 0%, 15%);
+    border-radius: 8px;
+    padding: 28px 24px;
+    max-width: calc(100% - 30px);
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+i.book-modal-check {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40px;
+    height: 80px;
+    width: 80px;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    font-size: 32px;
+}
+.book-modal-title {
+    margin-top: 50px;
+    line-height: 1;
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+}
+.book-modal-para {
+    margin-top: 18px;
+    font-size: 16px;
+    color: hsl(0, 0%, 70%);
+    line-height: 1.75;
+}
+.btn-book-modal {
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 0;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+#emailInput {
+    margin-top: 24px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: hsl(0, 0%, 15%);
+    padding: 12px 18px;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 16px;
+}
 
 
 
@@ -1145,6 +1231,12 @@ a.foot-txt:hover {
     }
 }
 @media only screen and (max-width: 700px){
+    .mobile-hero {
+        display: block;
+    }
+    .desktop-grid {
+        display: none;
+    }
     .width {
         max-width: calc(100% - 20px);
     }
