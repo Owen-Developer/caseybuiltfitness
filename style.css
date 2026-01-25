@@ -219,15 +219,19 @@ body {
 }
 .about-img {
     flex-shrink: 0;
-    height: 650px;
+    height: 750px;
     width: 600px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     overflow: hidden;
     border-radius: 6px;
 }
 .about-img img {
+    width: 100%;
+    height: auto;
+}
+.about-video {
     width: 100%;
     height: auto;
 }
