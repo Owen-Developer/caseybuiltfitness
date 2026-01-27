@@ -114,7 +114,7 @@ document.querySelectorAll(".free-btn").forEach((btn, idx) => {
     btn.addEventListener("click", () => {
         document.getElementById("accessModal").style.opacity = "1";
         document.getElementById("accessModal").style.pointerEvents = "auto"; 
-        pdfIdx = idx;
+        pdfIdx = idx + 1;
     });
 });
 document.getElementById("accessModal").addEventListener("click", (e) => {
