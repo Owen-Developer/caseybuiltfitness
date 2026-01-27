@@ -79,7 +79,7 @@ function viewPdf(){
     let email = document.getElementById("emailInput").value;
     if(email != ""){
         async function sendEmail(){
-            const dataToSend = { email: email };
+            const dataToSend = { email: email, text: "Your payment has been confirmed.<br><br>You can now access the program here: https://caseybuiltfitness.com/pdfs/programme.pdf" };
             try {
                 const response = await fetch(`https://servers.nextdesignwebsite.com/casey/api/send-email`, {
                     method: 'POST',
@@ -98,6 +98,55 @@ function viewPdf(){
                 const data = await response.json();
                 if(data.message == "success"){
                     window.location.href = "/pdfs/programme.pdf";
+                }
+            } catch (error) {
+                console.error('Error posting data:', error);
+            }
+        } 
+        sendEmail();
+    } else {
+        document.getElementById("emailInput").style.border = "1px solid red";
+    }
+}
+
+let pdfIdx;
+document.querySelectorAll(".free-btn").forEach((btn, idx) => {
+    btn.addEventListener("click", () => {
+        document.getElementById("accessModal").style.opacity = "1";
+        document.getElementById("accessModal").style.pointerEvents = "auto"; 
+        pdfIdx = idx;
+    });
+});
+document.getElementById("accessModal").addEventListener("click", (e) => {
+    if(!document.querySelector("#accessModal .book-wrapper").contains(e.target)){
+        document.getElementById("accessModal").style.opacity = "0";
+        document.getElementById("accessModal").style.pointerEvents = "none"; 
+    } 
+});
+function viewFree(){
+    let email = document.getElementById("freeInput").value;
+    let url = pdfIdx + ".pdf";
+    if(email != ""){
+        async function sendEmail(){
+            const dataToSend = { email: email, text: "You can now access the program you unlocked here: https://caseybuiltfitness.com/pdfs/" + url };
+            try {
+                const response = await fetch(`https://servers.nextdesignwebsite.com/casey/api/send-email`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(dataToSend), 
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Error:', errorData.message);
+                    return;
+                }
+
+                const data = await response.json();
+                if(data.message == "success"){
+                    window.location.href = "/pdfs/" + url;
                 }
             } catch (error) {
                 console.error('Error posting data:', error);
