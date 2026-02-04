@@ -76,12 +76,12 @@ let pdf;
 if(params.get("downloadId") && params.get("downloadId") == "904510"){
     document.getElementById("pdfModal").style.opacity = "1";
     document.getElementById("pdfModal").style.pointerEvents = "auto";
-    emailInput = document.getElementById("emailInput").value;
+    emailInput = document.getElementById("emailInput");
     pdf = 0;
 } else if(params.get("downloadId") && params.get("downloadId") == "558427"){
     document.getElementById("pdfModal2").style.opacity = "1";
     document.getElementById("pdfModal2").style.pointerEvents = "auto";
-    emailInput = document.getElementById("emailInput2").value;
+    emailInput = document.getElementById("emailInput2");
     pdf = 1;
 }
 function viewPdf(){
