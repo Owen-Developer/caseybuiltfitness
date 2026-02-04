@@ -71,15 +71,28 @@ document.querySelector(".pro-letter-btn").addEventListener("click", () => {
 });
 
 let params = new URLSearchParams(window.location.search);
+let emailInput;
+let pdf;
 if(params.get("downloadId") && params.get("downloadId") == "904510"){
     document.getElementById("pdfModal").style.opacity = "1";
     document.getElementById("pdfModal").style.pointerEvents = "auto";
+    emailInput = document.getElementById("emailInput").value;
+    pdf = 0;
+} else if(params.get("downloadId") && params.get("downloadId") == "558427"){
+    document.getElementById("pdfModal2").style.opacity = "1";
+    document.getElementById("pdfModal2").style.pointerEvents = "auto";
+    emailInput = document.getElementById("emailInput2").value;
+    pdf = 1;
 }
 function viewPdf(){
-    let email = document.getElementById("emailInput").value;
+    let email = emailInput.value;
+    let link = "https://caseybuiltfitness.com/pdfs/programme.pdf";
+    if(pdf == 1){
+        link = "https://caseybuiltfitness.com/pdfs/hybrid.pdf";
+    }
     if(email != ""){
         async function sendEmail(){
-            const dataToSend = { email: email, text: "Your payment has been confirmed.<br><br>You can now access the program here: https://caseybuiltfitness.com/pdfs/programme.pdf" };
+            const dataToSend = { email: email, text: "Your payment has been confirmed.<br><br>You can now access the program here: " + link };
             try {
                 const response = await fetch(`https://servers.nextdesignwebsite.com/casey/api/send-email`, {
                     method: 'POST',
@@ -97,7 +110,7 @@ function viewPdf(){
 
                 const data = await response.json();
                 if(data.message == "success"){
-                    window.location.href = "/pdfs/programme.pdf";
+                    window.location.href = link;
                 }
             } catch (error) {
                 console.error('Error posting data:', error);
